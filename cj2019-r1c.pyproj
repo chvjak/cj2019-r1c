@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5eacd0fa-05d5-4016-a749-bc42d9661fa6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>task1.py</StartupFile>
+    <StartupFile>rps.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="task1.py" />
+    <Compile Include="interactive_runner.py" />
+    <Compile Include="snippets.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="interactive2.py" />
+    <Compile Include="bacterial.py" />
+    <Compile Include="rps.py" />
+    <Compile Include="testing_tool.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="interactive2.txt" />
+    <Content Include="bacterial.txt" />
+    <Content Include="rps.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

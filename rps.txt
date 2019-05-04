@@ -1,0 +1,43 @@
+3
+2
+PSR
+RRRRRR
+2
+RP
+P
+5
+RS
+PPPS
+RS
+PPRS
+PPRPPPRS
+2
+RS
+PSPRSPRS
+1
+RS
+3
+R
+P
+S
+7
+RS
+RS
+RS
+RS
+RS
+RS
+RS
+
+Case #1: RSRSRSP
+Case #2: IMPOSSIBLE
+Case #3: P
+
+1
+robots <= 5
+commands <= 7
+
+2
+robots <= 255
+commands <= 500
+
