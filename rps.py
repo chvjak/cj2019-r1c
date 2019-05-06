@@ -33,16 +33,15 @@ def better_char(used_chars):
     if char == "S":
         return "R"
 
-
+from functools import reduce
 def get_best_program(programs):
-    max_len = max([len(p) for p in programs])
+    max_len = reduce(lambda x,y: x * y, set(len(p) for p in programs))
 
     # pad to same len
     for p in programs:
         lp = len(p)
-        if lp < max_len:
-            for i in range(lp, max_len):
-                p.append(p[i % lp])
+        for i in range(lp, max_len):
+            p.append(p[i % lp])
 
     best_program = ""
     for i in range(max_len):
