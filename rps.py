@@ -35,29 +35,28 @@ def better_char(used_chars):
 
 from functools import reduce
 def get_best_program(programs):
-    max_len = reduce(lambda x,y: x * y, set(len(p) for p in programs))
-
-    # pad to same len
-    for p in programs:
-        lp = len(p)
-        for i in range(lp, max_len):
-            p.append(p[i % lp])
-
+    max_len = max(len(p) for p in programs)
+    eliminated = [False] * len(programs)
     best_program = ""
+    
     for i in range(max_len):
-
-        # if there are 3 chars => impossible
-        # if there are 2 chars => draw possible
-        # if there are 1 chars => win possible
         used_chars = set()
-        for program in programs:
-            used_chars.add(program[i])
-
-            if len(used_chars) == 3:
-                return "IMPOSSIBLE"
+        for r, program in enumerate(programs):
+            if not eliminated[r]:
+                used_chars.add(program[i % len(program)])
+    
+                if len(used_chars) == 3:
+                    return "IMPOSSIBLE"
         else:
             if len(used_chars) == 2:
-                best_program = best_program + best_char(used_chars)
+                bc = best_char(used_chars)
+                best_program = best_program + bc
+                
+                # eliminate
+                for r, program in enumerate(programs):
+                  if not eliminated[r]:
+                      eliminated[r] = program[i % len(program)] != bc
+                
             else: # 1 char
                 best_program = best_program + better_char(used_chars)
                 return best_program
@@ -76,4 +75,4 @@ for i in range(T):
 
     result = get_best_program(programs)
 
-    print("Case #{0}: {1} ".format(i + 1, "".join(result)))
+    print("Case #{0}: {1}".format(i + 1, "".join(result)))

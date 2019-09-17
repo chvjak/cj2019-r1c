@@ -1,4 +1,12 @@
-3
+11
+4
+PS
+PR
+P
+R
+2
+PR
+RPRPR
 2
 PSPP
 SPS
@@ -51,4 +59,17 @@ commands <= 7
 2
 robots <= 255
 commands <= 500
+
+
+Case #1: IMPOSSIBLE
+Case #2: PP
+Case #3: SS
+Case #4: RRP
+Case #5: SS
+Case #6: PR
+Case #7: PS
+Case #8: PS
+Case #9: PR
+Case #10: P
+Case #11: IMPOSSIBLE
 

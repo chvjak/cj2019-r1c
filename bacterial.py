@@ -65,4 +65,4 @@ for i in range(T):
     # Number of distinct winning openning moves for P1: i.e {(r1, c1, H), (r1, c1, V) ...}
     result = get_win_pos_count(rows)
 
-    print("Case #{0}: {1} ".format(i + 1, result))
+    print("Case #{0}: {1}".format(i + 1, result))
